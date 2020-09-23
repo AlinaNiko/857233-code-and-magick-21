@@ -35,7 +35,7 @@ const BAR_GAP = 50;
 const TEXT_GAP = 16;
 
 const getSaturation = function (min, max) {
-  let randomNumber = min + Math.random() * (max + 1 - min);
+  const randomNumber = min + Math.random() * (max + 1 - min);
   return Math.round(randomNumber);
 };
 
@@ -52,7 +52,7 @@ const getMaxElement = function (array) {
   return maxElement;
 };
 
-let getBarHeight = function (maxHeight, playerPoint, maxPlayerPoint) {
+const getBarHeight = function (maxHeight, playerPoint, maxPlayerPoint) {
   return (maxHeight * playerPoint) / maxPlayerPoint;
 };
 
@@ -103,16 +103,12 @@ const renderCongratulations = function (ctx) {
 };
 
 const renderBar = function (ctx, players, points) {
-  let maxPoint = getMaxElement(points);
+  const maxPoint = getMaxElement(points);
 
   for (let i = 0; i < players.length; i++) {
-    let barHeight = getBarHeight(BarSize.MAX_HEIGHT, points[i], maxPoint);
-    let randomSaturation = getSaturation(Color.SATURATION_MIN, Color.SATURATION_MAX);
-    let barColor = `hsl(240, ${randomSaturation}%, 50%)`;
-
-    if (players[i] === `Вы`) {
-      barColor = Color.YOU_BAR;
-    }
+    const barHeight = getBarHeight(BarSize.MAX_HEIGHT, points[i], maxPoint);
+    const randomSaturation = getSaturation(Color.SATURATION_MIN, Color.SATURATION_MAX);
+    const barColor = (players[i] === `Вы`) ? Color.YOU_BAR : `hsl(240, ${randomSaturation}%, 50%)`;
 
     renderText(
         ctx,
