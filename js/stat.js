@@ -36,7 +36,7 @@ const TEXT_GAP = 16;
 
 const getSaturation = function (min, max) {
   const randomNumber = min + Math.random() * (max + 1 - min);
-  return Math.round(randomNumber);
+  return Math.floor(randomNumber);
 };
 
 const getMaxElement = function (array) {
