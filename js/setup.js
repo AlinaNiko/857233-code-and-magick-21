@@ -115,19 +115,11 @@ setupUserName.addEventListener(`input`, function () {
 const wizardCoat = setupBlock.querySelector(`.setup-wizard .wizard-coat`);
 const wizardEyes = setupBlock.querySelector(`.setup-wizard .wizard-eyes`);
 const wizardFireball = setupBlock.querySelector(`.setup-fireball-wrap`);
-const setupInputs = setupBlock.querySelectorAll(`input`);
 
-const inputCoatColor = Array.from(setupInputs).find(function (setupInput) {
-  return setupInput.name === `coat-color`;
-});
+const inputCoatColor = setupBlock.querySelector(`[name="coat-color"]`);
+const inputEyesColor = setupBlock.querySelector(`[name="eyes-color"]`);
+const inputFireballColor = setupBlock.querySelector(`[name="fireball-color"]`);
 
-const inputEyesColor = Array.from(setupInputs).find(function (setupInput) {
-  return setupInput.name === `eyes-color`;
-});
-
-const inputFireballColor = Array.from(setupInputs).find(function (setupInput) {
-  return setupInput.name === `fireball-color`;
-});
 
 wizardCoat.addEventListener(`click`, function () {
   const coatRandomColor = getRandomArrayItem(WIZARD_COAT_COLORS);
