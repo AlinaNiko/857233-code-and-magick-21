@@ -700,7 +700,7 @@ input[type=radio]:checked + .review-mark-label
     box-shadow: 10px 10px 0 rgba(0, 0, 0, .25);
 }
 
-.setup-open-icon
+/* .setup-open-icon
 {
     position: absolute;
     z-index: 2;
@@ -712,7 +712,20 @@ input[type=radio]:checked + .review-mark-label
 
 .setup-open-icon:hover
 {
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, .5);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, .5);
+} */
+
+.setup-open {
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  right: 100px;
+
+  cursor: pointer;
+}
+
+.setup-open:hover {
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, .5);
 }
 
 .setup-title
@@ -725,7 +738,7 @@ input[type=radio]:checked + .review-mark-label
     display: inline-block;
 }
 
-.setup-open-icon,
+/* .setup-open-icon,
 .setup-user-pic
 {
     display: inline-block;
@@ -739,6 +752,30 @@ input[type=radio]:checked + .review-mark-label
     vertical-align: middle;
 
     border-radius: 40px;
+} */
+
+.setup-open,
+.setup-user-pic
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    margin-right: 5px;
+
+    vertical-align: middle;
+
+    border-radius: 40px;
+}
+
+.setup-open-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
 }
 
 .setup-user-name
@@ -783,6 +820,7 @@ input[type=radio]:checked + .review-mark-label
     transform: translateY(-.3em);
 
     color: #000;
+    background: transparent;
 }
 
 .setup-artifacts-shop
